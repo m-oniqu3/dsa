@@ -132,6 +132,7 @@ class LinkedList {
     if (index === this.length - 1) {
       const leader = this.traverseToIndex(this.length - 2);
       this.tail = leader;
+      this.tail.next = null;
       this.length--;
       return this;
     }
@@ -142,6 +143,27 @@ class LinkedList {
 
     leader.next = nodeAfterindex;
     this.length--;
+  }
+
+  reverse() {
+    // if there is just 1 item
+    if (!this.head.next) {
+      return this;
+    }
+
+    let first = this.head;
+    this.tail = this.head;
+    let second = first.next;
+
+    while (second) {
+      const temp = second.next;
+      second.next = first;
+      first = second;
+      second = temp;
+    }
+    this.head.next = null;
+    this.head = first;
+    return this;
   }
 
   printList() {
@@ -159,8 +181,14 @@ class LinkedList {
 const myLinkedList = new LinkedList(10);
 myLinkedList.append(5);
 myLinkedList.append(16);
-myLinkedList.prepend(50);
+myLinkedList.prepend(1);
 myLinkedList.insert(2, 99);
-myLinkedList.remove(4);
-myLinkedList.printList();
+myLinkedList.insert(20, 88);
+// myLinkedList.printList();
+
+myLinkedList.remove(2);
+myLinkedList.remove(2);
 console.log(myLinkedList);
+myLinkedList.printList();
+myLinkedList.reverse();
+myLinkedList.printList();
