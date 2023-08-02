@@ -18,6 +18,8 @@ class Stack {
 
   // the list is backwards
   push(value) {
+    if (!value) return "Submit a value to add to stack";
+
     const node = new Node(value);
 
     if (this.length === 0) {

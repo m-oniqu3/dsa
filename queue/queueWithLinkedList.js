@@ -17,6 +17,7 @@ class Queue {
   }
 
   enqueue(value) {
+    if (!value) return "Submit a value to add to queue";
     const node = new Node(value);
 
     if (this.length === 0) {
@@ -32,7 +33,8 @@ class Queue {
 
   dequeue() {
     if (!this.first) return null;
-    if (this.top === this.bottom) {
+
+    if (this.first === this.last) {
       this.last = null;
     }
 
