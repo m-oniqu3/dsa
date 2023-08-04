@@ -10,11 +10,6 @@ const b = new Node("B");
 const c = new Node("C");
 const d = new Node("D");
 
-// const a = new Node(2);
-// const b = new Node(8);
-// const c = new Node(3);
-// const d = new Node(7);
-
 a.next = b;
 b.next = c;
 c.next = d;

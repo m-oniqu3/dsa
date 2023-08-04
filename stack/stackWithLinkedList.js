@@ -51,11 +51,13 @@ class Stack {
   }
 }
 
-const stack = new Stack();
+// const stack = new Stack();
 
-stack.push("google");
-stack.push("udemy");
-stack.push("discord");
-stack.push("Pinterest");
-stack.pop();
-console.log(stack);
+// stack.push("google");
+// stack.push("udemy");
+// stack.push("discord");
+// stack.push("Pinterest");
+// stack.pop();
+// console.log(stack);
+
+module.exports = Stack;
